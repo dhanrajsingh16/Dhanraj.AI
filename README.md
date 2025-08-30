@@ -55,7 +55,7 @@ GEMINI_API_KEY=your_key_here
 npm run dev
 
 
-App will be live at: http://localhost:3000
+App will be live at: https://dhanrajaicompareaimodels.vercel.app/
 
 Build for Production
 npm run build
