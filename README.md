@@ -2,7 +2,7 @@ Dhanraj.AI
 
 Compare AI Models in Real-Time
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/60562711-44c0-466e-9cfc-6eddf9892f4f" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5b30ffb7-389c-4740-b746-cfad7b1a9a1c" />
 
 
 Dhanraj.AI is a web app that allows you to chat with multiple AI models side by side. You can compare their responses in real time, analyze strengths and weaknesses, and pick the best output for your task.
