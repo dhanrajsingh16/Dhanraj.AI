@@ -62,31 +62,31 @@ export default function ModelCard({
       <div className="flex-1 p-4 overflow-y-auto min-h-0 flex flex-col">
         {messages.length === 0 ? (
           <div className="flex-1 flex items-center justify-center">
-            <div className="text-center text-gray-400 py-20 px-16 w-full max-w-lg mx-auto">
-              <div className="mb-12">
-                {/* Enhanced Animated Circle */}
-                <div className="relative w-32 h-32 mx-auto mb-10">
+            <div className="text-center text-gray-400 py-8 px-8 w-full max-w-sm mx-auto">
+              <div className="mb-6">
+                {/* Smaller Animated Circle */}
+                <div className="relative w-20 h-20 mx-auto mb-6">
                   {/* Outer rotating ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 animate-spin" style={{ animationDuration: '3s' }}>
+                  <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-0.5 animate-spin" style={{ animationDuration: '3s' }}>
                     <div className="w-full h-full rounded-full bg-gray-900/80 backdrop-blur-sm"></div>
                   </div>
                   {/* Inner gradient circle */}
-                  <div className="absolute inset-2 rounded-full bg-gradient-to-br from-blue-500/30 via-purple-500/40 to-pink-500/30 flex items-center justify-center animate-pulse">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
-                      <span className="text-white text-2xl font-bold animate-bounce" style={{ animationDuration: '2s' }}>AI</span>
+                  <div className="absolute inset-1 rounded-full bg-gradient-to-br from-blue-500/30 via-purple-500/40 to-pink-500/30 flex items-center justify-center animate-pulse">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
+                      <span className="text-white text-lg font-bold animate-bounce" style={{ animationDuration: '2s' }}>AI</span>
                     </div>
                   </div>
-                  {/* Floating particles */}
-                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-blue-400 rounded-full animate-ping"></div>
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-                  <div className="absolute top-1/2 -right-3 w-2 h-2 bg-pink-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+                  {/* Smaller floating particles */}
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+                  <div className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute top-1/2 -right-2 w-1.5 h-1.5 bg-pink-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
                 </div>
 
-                <p className="text-2xl font-bold text-gray-200 mb-4 animate-fade-in">Ready to chat!</p>
-                <p className="text-base text-gray-300 leading-relaxed mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>{model.description}</p>
+                <p className="text-lg font-bold text-gray-200 mb-2 animate-fade-in">Ready to chat!</p>
+                <p className="text-sm text-gray-300 leading-relaxed mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>{model.description}</p>
               </div>
-              <div className="text-sm text-gray-500 opacity-80 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                Start a conversation to see responses from this AI model
+              <div className="text-xs text-gray-500 opacity-80 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                Start a conversation to see responses
               </div>
             </div>
           </div>
