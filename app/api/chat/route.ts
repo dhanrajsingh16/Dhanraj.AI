@@ -13,16 +13,24 @@ async function sendMessageToModel(
     throw new Error('OPENROUTER_API_KEY is not set in the environment variables.');
   }
 
+  console.log('API Key loaded:', !!OPENROUTER_API_KEY);
+  console.log('API Key length:', OPENROUTER_API_KEY?.length);
+  console.log('API Key prefix:', OPENROUTER_API_KEY?.substring(0, 12));
+  console.log('Making request to model:', modelId);
+
   try {
     const messages = [
       ...conversationHistory,
       { role: 'user', content: message }
     ];
 
+    const authHeader = `Bearer ${OPENROUTER_API_KEY}`;
+    console.log('Authorization header:', authHeader.substring(0, 20) + '...');
+
     const response = await fetch(OPENROUTER_API_URL, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+        'Authorization': authHeader,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'https://dhanraj.ai',
         'X-Title': 'Dhanraj.AI - AI Model Comparison'
@@ -38,7 +46,12 @@ async function sendMessageToModel(
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(`API Error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+      console.error('OpenRouter API Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        error: errorData
+      });
+      throw new Error(`API Error: ${response.status} - ${errorData.error?.message || errorData.message || 'Unknown error'}`);
     }
 
     const data: OpenRouterResponse = await response.json();
@@ -56,6 +69,10 @@ async function sendMessageToModel(
 
 export async function POST(request: NextRequest) {
   try {
+    console.log('API Route called with environment check:');
+    console.log('OPENROUTER_API_KEY exists:', !!process.env.OPENROUTER_API_KEY);
+    console.log('API Key value:', process.env.OPENROUTER_API_KEY?.substring(0, 20) + '...');
+
     const { modelIds, message, conversationHistory } = await request.json();
 
     if (!modelIds || !Array.isArray(modelIds) || modelIds.length === 0) {
@@ -95,6 +112,28 @@ export async function POST(request: NextRequest) {
     console.error('API route error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+// Test endpoint to verify API key
+export async function GET() {
+  try {
+    const apiKey = process.env.OPENROUTER_API_KEY;
+    const hasApiKey = !!apiKey;
+    const keyLength = apiKey?.length || 0;
+    const keyPrefix = apiKey?.substring(0, 12) || 'none';
+
+    return NextResponse.json({
+      apiKeyLoaded: hasApiKey,
+      keyLength,
+      keyPrefix,
+      environment: process.env.NODE_ENV
+    });
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Test endpoint failed' },
       { status: 500 }
     );
   }
