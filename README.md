@@ -64,7 +64,7 @@ npm run start
 Contributing
 Contributions are welcome! Please fork the repo and submit a pull request.
 
-📜 License
+-> License
 
 This project is licensed under the MIT License.
 
