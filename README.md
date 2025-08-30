@@ -54,7 +54,7 @@ MISTRAL_API_KEY= mistralai/mistral-7b-instruct:free
 
 GEMINI_API_KEY= google/gemini-2.0-flash-exp:free
 
-4️. Run the development server
+4️. Run the development server -> 
 npm run dev
 
 
