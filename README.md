@@ -34,7 +34,7 @@ Other: Next.js, Websockets for real-time chat
 
 Getting Started
 1️. Clone the repository
-git clone https://github.com/yourusername/dhanraj-ai.git
+git clone https://github.com/dhanrajsingh16/dhanraj-ai.git
 cd dhanraj-ai
 
 2️. Install dependencies
