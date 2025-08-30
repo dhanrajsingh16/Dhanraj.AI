@@ -39,7 +39,7 @@ cd dhanraj-ai
 
 2️. Install dependencies
 npm install
-# or
+or
 yarn install
 
 3️. Setup environment variables
