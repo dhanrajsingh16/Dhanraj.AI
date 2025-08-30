@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Dhanraj.AI 
 
-## Getting Started
+Compare AI Models in Real-Time
 
-First, run the development server:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/60562711-44c0-466e-9cfc-6eddf9892f4f" />
 
-```bash
+
+Dhanraj.AI is a web app that allows you to chat with multiple AI models side by side. You can compare their responses in real time, analyze strengths and weaknesses, and pick the best output for your task.
+
+-> Features
+
+-> Compare multiple AI models simultaneously
+
+-> Real-time chat interface for each model
+
+-> Side-by-side response comparison
+
+-> "Pick best" option to highlight the most useful answer
+
+-> Clean and modern UI with smooth interactions
+
+-> Powered by state-of-the-art AI models (DeepSeek, Meta Llama, Mistral, Gemini, etc.)
+
+
+-> Tech Stack
+
+Frontend: React + Tailwind CSS
+
+Backend: Node.js / Express
+
+AI Models: Integrated via APIs (DeepSeek, Meta, Mistral, Google, etc.)
+
+Other: Next.js, Websockets for real-time chat
+
+Getting Started
+1️. Clone the repository
+git clone https://github.com/yourusername/dhanraj-ai.git
+cd dhanraj-ai
+
+2️. Install dependencies
+npm install
+# or
+yarn install
+
+3️. Setup environment variables
+
+Create a .env file in the root directory and add your API keys:
+
+DEEPSEEK_API_KEY=your_key_here
+META_LLAMA_API_KEY=your_key_here
+MISTRAL_API_KEY=your_key_here
+GEMINI_API_KEY=your_key_here
+
+4️. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+App will be live at: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build for Production
+npm run build
+npm run start
 
-## Learn More
+Contributing
+Contributions are welcome! Please fork the repo and submit a pull request.
 
-To learn more about Next.js, take a look at the following resources:
+📜 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Author
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dhanraj Singh
