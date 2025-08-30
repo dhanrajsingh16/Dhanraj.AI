@@ -46,10 +46,13 @@ yarn install
 
 Create a .env file in the root directory and add your API keys:
 
-DEEPSEEK_API_KEY=your_key_here
-META_LLAMA_API_KEY=your_key_here
-MISTRAL_API_KEY=your_key_here
-GEMINI_API_KEY=your_key_here
+DEEPSEEK_API_KEY= deepseek/deepseek-r1-0528-qwen3-8b:free
+
+META_LLAMA_API_KEY= meta-llama/llama-3.3-8b-instruct:free
+
+MISTRAL_API_KEY= mistralai/mistral-7b-instruct:free
+
+GEMINI_API_KEY= google/gemini-2.0-flash-exp:free
 
 4️. Run the development server
 npm run dev
