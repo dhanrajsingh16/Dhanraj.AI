@@ -125,11 +125,35 @@ export async function GET() {
     const keyLength = apiKey?.length || 0;
     const keyPrefix = apiKey?.substring(0, 12) || 'none';
 
+    // Test the API key with a simple request
+    let apiTestResult = 'Not tested';
+    if (hasApiKey) {
+      try {
+        const testResponse = await fetch('https://openrouter.ai/api/v1/models', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (testResponse.ok) {
+          apiTestResult = 'API key is valid';
+        } else {
+          apiTestResult = `API key invalid: ${testResponse.status} ${testResponse.statusText}`;
+        }
+      } catch (error) {
+        apiTestResult = `API test failed: ${error instanceof Error ? error.message : 'Unknown error'}`;
+      }
+    }
+
     return NextResponse.json({
       apiKeyLoaded: hasApiKey,
       keyLength,
       keyPrefix,
-      environment: process.env.NODE_ENV
+      apiTestResult,
+      environment: process.env.NODE_ENV,
+      timestamp: new Date().toISOString()
     });
   } catch (error) {
     return NextResponse.json(
