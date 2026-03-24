@@ -62,7 +62,7 @@ async function sendMessageToModel(
 
       // Retry on rate limiting (429) with exponential backoff
       if (response.status === 429 && attempt < maxRetries) {
-        const waitMs = 1000 * attempt;
+        const waitMs = 3000 * attempt;
         console.warn(`Rate limited by OpenRouter (429). Retrying in ${waitMs}ms (attempt ${attempt}/${maxRetries}) for model ${modelId}.`);
         await delay(waitMs);
         continue;
